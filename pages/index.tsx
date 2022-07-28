@@ -1,11 +1,11 @@
 import axios from 'axios';
-import type { GetStaticProps, NextPage } from 'next';
+import type { GetStaticProps } from 'next';
 import { useState } from 'react';
 import { Button, Htag, P, Rating, Tag } from '../components/index';
 import { MenuItem } from '../interfaces/menu.interface';
 import { withLayout } from '../layout/Layout';
 
-function Home ({menu, firstCategory}: HomeProps): JSX.Element {
+function Home ({menu}: HomeProps): JSX.Element {
   const [counter, setCounter] = useState<number>(0);
   const [rating, setRating] = useState<number>(3);
 
@@ -33,7 +33,7 @@ function Home ({menu, firstCategory}: HomeProps): JSX.Element {
       </ul>
     </>
   );
-};
+}
 
 export default withLayout(Home);
 
