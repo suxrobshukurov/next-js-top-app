@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import { Button, Htag, P, Rating, Tag } from '../components/index';
+import { Layout } from '../layout/Layout';
 
 const Home: NextPage = (): JSX.Element => {
   const [counter, setCounter] = useState<number>(0);
@@ -8,10 +9,10 @@ const Home: NextPage = (): JSX.Element => {
 
 
   return (
-    <>
+    <Layout>
       <Htag tag='h1'>{counter}</Htag>
       <Button apperance='primary' className='test' arrow='right'>test</Button>
-      <Button apperance='ghost' className='test2' arrow="down" onClick={() => setCounter(x => x + 1)}>test2</Button>
+      <Button apperance='ghost' className='test2' arrow="down" onClick={() => setCounter(counter =>  ++counter)}>test2</Button>
       <P size='s'>test</P>
       <P size='l'>test</P>
       <P >test</P>
@@ -24,8 +25,7 @@ const Home: NextPage = (): JSX.Element => {
         <Tag color='primary'>text</Tag>
       </div>
       <Rating rating={rating} isEditable setRating={setRating} />
-
-    </>
+    </Layout>
   );
 };
 
